@@ -227,7 +227,7 @@
                                     {{-- href="{{ url('/course-details') }}"  --}}
                                     class="service-two__rm show-detail-btn"
                                         data-id="{{ $coursesOffered['id'] }}" 
-                                      
+                                      style="cursor: pointer"
                                         >Read More<span
                                             class="icon-caret-right"></span></a>
 
@@ -253,20 +253,6 @@
             <div class="row">
                 <div class="col-lg-7 col-md-7">
                     <div class="testimonial-three__wrapper">
-                <!--        <div class="testimonial-three__carousel__thumb eduact-owl__carousel owl-theme owl-carousel" data-owl-options='{-->
-                <!--"items": 3,-->
-                <!--"margin": 36,-->
-                <!--"smartSpeed": 700,-->
-                <!--"loop":true,-->
-                <!--"autoplay": true,-->
-                <!--"URLhashListener":true,-->
-                <!--"center": true,-->
-                <!--"dots":false-->
-                <!--}'>-->
-                <!--        <a href="#item1" class="item" data-hash="item1"><img src="{{ asset('website/assets/images/resources/testimonial-3-1.jpg')}}" alt="eduact"></a>-->
-                <!--        <a href="#item2" class="item" data-hash="item2"><img src="{{ asset('website/assets/images/resources/testimonial-3-2.jpg')}}" alt="eduact"></a>-->
-                <!--        <a href="#item3" class="item" data-hash="item3"><img src="{{ asset('website/assets/images/resources/testimonial-3-3.jpg')}}" alt="eduact"></a>-->
-                <!--    </div> -->
                         <div class="testimonial-three__carousel eduact-owl__carousel owl-theme owl-carousel"
                             data-owl-options='{
         "items": 1,

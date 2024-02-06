@@ -1083,6 +1083,7 @@ button.btn.btn-outline-warning.btn-fw {  display: block;   width: 100%;   margin
 }
 .item {
 	position: relative;
+    height: 500px;
 }
 .carousel-caption h5 {
 	position: absolute;

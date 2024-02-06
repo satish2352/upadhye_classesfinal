@@ -123,21 +123,36 @@ class IndexController extends Controller
     }
     
     // ================
+    // public function showParticularCourseDetails(Request $request)
+    // {
+    //     try {
+           
+              
+    //         $data_output = $this->service->showParticularCourseDetails($request->show_detail_id);
+    //         // dd($data_output);
+    //         // die();
+    //         return view('website.pages.subpages.course-details', compact('data_output'));
+
+    //     } catch (\Exception $e) {
+    //         return $e;
+    //     }
+    // } 
+
     public function showParticularCourseDetails(Request $request)
     {
         try {
-           
-              
-            $data_output = $this->service->showParticularCourseDetails($request->show_detail_id);
-            // dd($data_output);
-            // die();
-            return view('website.pages.subpages.course-details', compact('data_output'));
-
+            $id = $request->input('show_detail_id'); // Assuming the parameter is passed as 'show_detail_id'
+            $data_output = $this->service->showParticularCourseDetails($id);
+            // Check if data is retrieved
+            if ($data_output !== null) {
+                return view('website.pages.subpages.course-details', compact('data_output'));
+            } else {
+                return response()->json(['error' => 'Course details not found.'], 404);
+            }
         } catch (\Exception $e) {
-            return $e;
+            return response()->json(['error' => 'An error occurred while fetching course details.'], 500);
         }
-    } 
-
+    }
 
     // public function showParticularCourseDetails(Request $request)
     // {

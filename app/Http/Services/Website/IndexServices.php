@@ -187,21 +187,27 @@ class IndexServices
         }
     }  
     // =============
-    public function showParticularCourseDetails($id)
-    {
-        try {
-            // return $this->repo->showParticularCourseDetails();
-
-            $courseDetails = $this->repo->showParticularCourseDetails($id);
-            // dd($courseDetails);
-            // die();
-            // Use dd to dump and die, printing the variable and terminating the script
-            // dd($courseDetails);
+    // public function showParticularCourseDetails($id)
+    // {
+    //     try {
+    //         $courseDetails = $this->repo->showParticularCourseDetails($id);
             
-        } catch (\Exception $e) {
-            return $e;
-        }
-    } 
+    //     } catch (\Exception $e) {
+    //         return $e;
+    //     }
+    // } 
+
+    public function showParticularCourseDetails($id)
+{
+    try {
+        $courseDetails = $this->repo->showParticularCourseDetails($id);
+        return $courseDetails; // Return the fetched course details
+    } catch (\Exception $e) {
+        // Handle exceptions
+        return null; // or throw $e; depending on your requirement
+    }
+}
+
     public function showParticularUpcomingCourseDetailsDetails()
     {
         try {

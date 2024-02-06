@@ -410,9 +410,7 @@ class IndexRepository  {
         try {
             $data_output = CoursesOffered::where('is_active','=',true);
             $data_output =  $data_output->select('id','title','description','image');
-            // $data_output =  $data_output->get()
-            //                 ->toArray();
-                            $data_output = $data_output->where('id', $id)->get()->toArray();
+            $data_output = $data_output->where('id', $id)->get()->toArray();
 
                            
             return  $data_output;
