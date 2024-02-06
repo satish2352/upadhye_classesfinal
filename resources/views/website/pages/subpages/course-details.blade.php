@@ -19,6 +19,7 @@
     <section class="course-three"
         style="background-image: url({{ asset('website/assets/images/shapes/course-bg-3.png') }});" id="course"
         >
+     
 
         @if (empty($data_output))
         <div class="container">

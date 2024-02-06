@@ -193,7 +193,8 @@ class IndexServices
             // return $this->repo->showParticularCourseDetails();
 
             $courseDetails = $this->repo->showParticularCourseDetails($id);
-        
+            // dd($courseDetails);
+            // die();
             // Use dd to dump and die, printing the variable and terminating the script
             // dd($courseDetails);
             

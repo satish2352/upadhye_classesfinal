@@ -185,8 +185,8 @@ className="btn-whatsapp-pulse">
 <script>
     $('.show-detail-btn').click(function(e) {
         var detailId = $(this).attr("data-id");
-        alert('detail_id: ' + detailId);
-        $("#show-detail_id").val(detailId);
+        // alert('detail_id: ' + detailId);
+        $("#show_detail_id").val(detailId);
         $("#showdetailform").submit();
     })
 </script>
