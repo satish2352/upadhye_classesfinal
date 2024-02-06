@@ -140,7 +140,23 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="row py-3">
+                            <div class="col-xl-12">
+                                <div class="checkout-page__check-box">
+                                    <input type="checkbox" name="agree_checkbox" id="agree_checkbox"
+                                        {{ old('agree_checkbox') ? 'checked' : '' }}>
+                                    <label for="agree_checkbox" style="font-size: 15px">I Agree to receive SMS/Call from
+                                        Upadhye Classes
+                                        I have read all Privacy Policy and Refund Policy, Agree to receive SMS/Call from
+                                        Upadhye Classes<span></span></label>
+                                    <span id="agreeError" class="error"></span>
+                                </div>
+                                @if ($errors->has('agree_checkbox'))
+                                    <span class="red-text"
+                                        style="color: red;">{{ $errors->first('agree_checkbox') }}</span>
+                                @endif
+                            </div>
+
+                            {{-- <div class="row py-3">
                                 <div class="col-xl-12">
                                     <div class="checkout-page__check-box">
                                         <input type="checkbox" name="skipper4" id="skipper4" >
@@ -150,7 +166,7 @@
                                             Upadhye Classes<span></span></label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="d-flex">
                                 <button type="submit" id="submitButton" class="eduact-btn eduact-btn-second"><span
                                         class="eduact-btn__curve"></span>Submit<i class="icon-arrow"></i></button>
@@ -173,6 +189,10 @@
 
 <script>
     $(document).ready(function() {
+
+        $.validator.addMethod("spcenotallow", function(value, element) {
+                return this.optional(element) || /^[^\s]+$/.test(value);
+            }, "Spaces are not allowed.");
 
         $("#regForm").validate({
             errorClass: "error",
@@ -210,7 +230,9 @@
                     required: true,
                     email: true,
                 },
-
+                agree_checkbox: {
+                        required: true,
+                    },
             },
             messages: {
                 edu_location_id: {
@@ -246,36 +268,46 @@
                     required: "Enter Email Id",
                     spcenotallow: "Enter Some Text",
                 },
-
+                agree_checkbox: {
+                        required: "You must agree to the terms to submit the form.",
+                    },
 
             },
             highlight: function(element, errorClass) {
                 $(element).removeClass(errorClass);
             },
             submitHandler: function(form) {
-                // Check if reCAPTCHA challenge is completed
-                if (grecaptcha.getResponse() === "") {
-                    alert("Please complete the reCAPTCHA challenge.");
-                } else {
-                    // Proceed with form submission
-                    form.submit();
+                    // Reset error messages
+                    $(".error").text("");
+                    // Check if reCAPTCHA challenge is completed
+                    if (grecaptcha.getResponse() === "") {
+                        // Display error message for reCAPTCHA
+                        $("#agreeError").text("Please complete the reCAPTCHA challenge.");
+                    } else if (!$('#agree_checkbox').is(':checked')) {
+                        // Display error message for the checkbox
+                        $("#agreeError").text("Please agree to submit.");
+                    } else {
+                        // Proceed with form submission
+                        form.submit();
+                    }
                 }
-            }
         });
 
-        $("input#document_file").hide();
+       // Submit button click event
+       $("#submitButton").on("click", function() {
+                // Trigger form validation
+                $("#regForm").valid();
+
+                if ($("#agree_checkbox").prop("checked")) {
+                    $("#regForm").submit();
+                } else {
+                    // alert("Please agree to submit.");
+                    // e.preventDefault(); // Prevent the form submission
+                }
+            });
 
     });
 
-    $.extend($.validator.methods, {
-        spcenotallow: function(b, c, d) {
-            if (!this.depend(d, c)) return "dependency-mismatch";
-            if ("select" === c.nodeName.toLowerCase()) {
-                var e = a(c).val();
-                return e && e.length > 0
-            }
-            return this.checkable(c) ? this.getLength(b, c) > 0 : b.trim().length > 0
-        }
-    });
+  
 </script>
 @endsection

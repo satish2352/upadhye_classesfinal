@@ -40,6 +40,7 @@ class FessPaymentFormController extends Controller
              'g-recaptcha-response' => 'required|captcha',
              'address' => 'required',
              'remark' => 'required',
+             'agree_checkbox' => 'accepted', 
              ];
          $messages = [
              'edu_location_id.required' => 'Please Selecte Location.',
@@ -55,6 +56,7 @@ class FessPaymentFormController extends Controller
              'amount.required' => 'Please Enter Amount.',
              'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.',
              'g-recaptcha-response.required' =>'Please verify that you are not a robot.',
+             'agree_checkbox.accepted' => 'You must agree to the terms to submit the form.',
          ];
      
          try {

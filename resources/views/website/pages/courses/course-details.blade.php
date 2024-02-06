@@ -73,14 +73,18 @@
                                 <div class="col-lg-9"><span class="course-details__overview__text"> {{ strip_tags($showData->admission_procedure) }}</span></div>
                             </div>
                             <hr>
-                            <div class="row ">
-                                <div class="col-lg-3 d-flex align-items-center">
-                                    <h3 class="testimonial-two__title"><span class="icon-color-yekkow"><i
-                                                class="icon-book"></i></span> Eligibility : </h3>
+                            @if ($showData->eligibility == '')
+                                @else
+                                <div class="row ">
+                                    <div class="col-lg-3 d-flex align-items-center">
+                                        <h3 class="testimonial-two__title"><span class="icon-color-yekkow"><i
+                                                    class="icon-book"></i></span> Eligibility : </h3>
+                                    </div>
+                                    <div class="col-lg-9"><span class="course-details__overview__text">{{ strip_tags($showData->eligibility) }}</span></div>
                                 </div>
-                                <div class="col-lg-9"><span class="course-details__overview__text">{{ strip_tags($showData->eligibility) }}</span></div>
-                            </div>
-                            <hr>
+                                <hr>
+                            @endif
+                               
                         </div><!-- /.course-content -->
 {{-- \                        @endforeach --}}
                     </div><!-- /.course-card-two -->

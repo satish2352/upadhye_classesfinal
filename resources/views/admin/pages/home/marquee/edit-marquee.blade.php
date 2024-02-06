@@ -78,6 +78,25 @@ $common_form_data = App\Http\Controllers\Website\IndexController::getCommonFormD
                                         </div>
                                     </div>
                                     
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="marquee_tab_id">Marquee Tab</label>&nbsp<span class="red-text">*</span>
+                                            <select class="form-control" id="marquee_tab_id" name="marquee_tab_id">
+                                                <option value="">Select</option>
+                                                @foreach ($common_form_data['data_output_marquee_tab'] as $marquee)
+                                                    <option value="{{ $marquee['id'] }}"
+                                                        {{ (old('marquee_tab_id', $marquees->marquee_tab_id) == $marquee['id']) ? 'selected' : '' }}>
+                                                        {{ $marquee['title'] }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            @if ($errors->has('marquee_tab_id'))
+                                                <span class="red-text">{{ $errors->first('marquee_tab_id') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
                                     
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="form-group">
