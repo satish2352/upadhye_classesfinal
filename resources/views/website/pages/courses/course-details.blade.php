@@ -73,7 +73,7 @@
                                 <div class="col-lg-9"><span class="course-details__overview__text"> {{ strip_tags($showData->admission_procedure) }}</span></div>
                             </div>
                             <hr>
-                            @if ($showData->eligibility == '')
+                            @if ($showData->eligibility == 'null')
                                 @else
                                 <div class="row ">
                                     <div class="col-lg-3 d-flex align-items-center">

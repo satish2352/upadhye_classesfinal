@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('courses_type');
             $table->string('courses_duration');
             $table->text('admission_procedure');
-            $table->text('eligibility');
+            // $table->text('eligibility');
+            $table->string('eligibility')->default('null');
             $table->string('is_deleted')->default(false);
             $table->boolean('is_active')->default(true);
             $table->timestamps();

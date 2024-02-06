@@ -1,10 +1,11 @@
 <?php
-
 namespace App\Http\Controllers\Website;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Services\Website\IndexServices;
+
+
 use Session;
 use Validator;
 use App\Models\ {
@@ -122,17 +123,36 @@ class IndexController extends Controller
     }
     
     // ================
-
     public function showParticularCourseDetails(Request $request)
     {
         try {
+           
+              
             $data_output = $this->service->showParticularCourseDetails($request->show_detail_id);
+            // dd($data_output);
+            // die();
+            return view('website.pages.subpages.course-details', compact('data_output'));
 
         } catch (\Exception $e) {
             return $e;
         }
-        return view('website.pages.subpages.course-details',compact('data_output'));
-    }
+    } 
+
+
+    // public function showParticularCourseDetails(Request $request)
+    // {
+    //     try {
+    //         $new=$request->show_detail_id;
+            
+    //         $data_output = $this->service->showParticularCourseDetails($new);
+    //         dd($data_output);
+    //         die();
+
+    //     } catch (\Exception $e) {
+    //         return $e;
+    //     }
+    //     return view('website.pages.subpages.course-details',compact('data_output'));
+    // }
 
     public function showParticularUpcomingCourseDetailsDetails()
     {

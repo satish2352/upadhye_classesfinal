@@ -53,7 +53,7 @@ class CourseDetailsRepository  {
             $dataOutput->course_id = $request['course_id'];
             $dataOutput->courses_type = $request['courses_type'];
             $dataOutput->admission_procedure = $request['admission_procedure'];
-           $dataOutput->eligibility = $request['eligibility'] ?? ''; // Use empty string if not present
+           $dataOutput->eligibility = $request['eligibility'] ?? 'null'; // Use empty string if not present
             $dataOutput->courses_duration = $request['courses_duration'];
             
     
@@ -115,7 +115,7 @@ class CourseDetailsRepository  {
             // $dataOutput->course_id = $request['course_id'];
             $dataOutput->courses_type = $request['courses_type'];
             $dataOutput->admission_procedure = $request['admission_procedure'];
-            $dataOutput->eligibility = $request['eligibility'];
+            $dataOutput->eligibility = $request['eligibility'] ?? 'null';
             $dataOutput->courses_duration = $request['courses_duration'];
 
             $dataOutput->save();

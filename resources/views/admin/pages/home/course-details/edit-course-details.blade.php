@@ -85,8 +85,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                   
                                         <div class="form-group" id="summernote_id1">
-                                        <label for="eligibility">eligibility</label>&nbsp<span
-                                            class="red-text">*</span>
+                                        <label for="eligibility">eligibility</label>
                                         <textarea class="form-control eligibility" name="eligibility" id="description1"
                                             placeholder="Enter the Description">
               

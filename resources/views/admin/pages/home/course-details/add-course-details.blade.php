@@ -59,7 +59,7 @@
                                     </div>
                                      <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="form-group" id="summernote_id1">
-                                            <label for="eligibility">Eligibility <span class="red-text">*</span></label>
+                                            <label for="eligibility">Eligibility </label>
                                             <textarea class="form-control" name="eligibility" id="description1" placeholder="Enter Long Content">{{ old('eligibility') }}</textarea>
                                             @if ($errors->has('eligibility'))
                                                 <span class="red-text">{{ $errors->first('eligibility') }}</span>
