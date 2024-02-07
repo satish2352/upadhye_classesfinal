@@ -21,143 +21,15 @@
             <nav class="main-menu">
                 <div class="container">
                     <div class="main-menu__logo">
-                        <a href="{{ route('index') }}">
+                        <a href="{{ route('/') }}">
                             <img src="{{ asset('website/assets/images/logo-two.png')}}" width="183" height="48" alt="Eduact">
                         </a>
                     </div><!-- /.main-menu__logo -->
                     <div class="main-menu__nav">
                         <ul class="main-menu__list">
-                            <li class="megamenu megamenu-clickable megamenu-clickable--toggler">
-                                <a href="{{ route('index') }}">Home</a>
-                                {{-- <ul class="">
-                                    <li>
-                                        <div class="megamenu-popup">
-                                            <a href="#" class="megamenu-clickable--close"><span class="icon-close"></span></a><!-- /.megamenu-clickable--close -->
-                                            <div class="megamenu-popup__content">
-                                                <div class="demos-one">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col-md-6 col-lg-4">
-                                                                <div class="demos-one__single">
-                                                                    <div class="demos-one__image">
-                                                                        <img src="assets/images/home-showcase/popup-menu-1-1.jpg" alt="eduact" width="416" height="431">
-                                                                        <div class="demos-one__buttons">
-                                                                            <a href="index-2.html" class="eduact-btn">
-                                                                                <span class="eduact-btn__curve"></span>
-                                                                                Multi Page
-                                                                            </a>
-                                                                            <a href="index-one-page.html" class="eduact-btn">
-                                                                                <span class="eduact-btn__curve"></span>
-                                                                                One Page
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- /.demos-one__buttons -->
-                                                                    </div><!-- /.demos-one__image -->
-                                                                    <div class="demos-one__text">
-                                                                        <h3 class="demos-one__text__title">Home Page 01</h3>
-                                                                    </div><!-- /.demos-one__text -->
-                                                                </div><!-- /.demos-one__single -->
-                                                            </div><!-- /.col-md-6 -->
-                                                            <div class="col-md-6 col-lg-4">
-                                                                <div class="demos-one__single">
-                                                                    <div class="demos-one__image">
-                                                                        <img src="assets/images/home-showcase/popup-menu-1-2.jpg" alt="eduact" width="416" height="431">
-                                                                        <div class="demos-one__buttons">
-                                                                            <a href="index-3.html" class="eduact-btn">
-                                                                                <span class="eduact-btn__curve"></span>
-                                                                                Multi Page
-                                                                            </a>
-                                                                            <a href="index-2-one-page.html" class="eduact-btn">
-                                                                                <span class="eduact-btn__curve"></span>
-                                                                                One Page
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- /.demos-one__buttons -->
-                                                                    </div><!-- /.demos-one__image -->
-                                                                    <div class="demos-one__text">
-                                                                        <h3 class="demos-one__text__title">Home Page 02</h3>
-                                                                    </div><!-- /.demos-one__text -->
-                                                                </div><!-- /.demos-one__single -->
-                                                            </div><!-- /.col-md-6 -->
-                                                            <div class="col-md-6 col-lg-4">
-                                                                <div class="demos-one__single">
-                                                                    <div class="demos-one__image">
-                                                                        <img src="assets/images/home-showcase/popup-menu-1-3.jpg" alt="eduact" width="416" height="431">
-                                                                        <div class="demos-one__buttons">
-                                                                            <a href="index-4.html" class="eduact-btn">
-                                                                                <span class="eduact-btn__curve"></span>
-                                                                                Multi Page
-                                                                            </a>
-                                                                            <a href="index-3-one-page.html" class="eduact-btn">
-                                                                                <span class="eduact-btn__curve"></span>
-                                                                                One Page
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- /.demos-one__buttons -->
-                                                                    </div><!-- /.demos-one__image -->
-                                                                    <div class="demos-one__text">
-                                                                        <h3 class="demos-one__text__title">Home Page 03</h3>
-                                                                    </div><!-- /.demos-one__text -->
-                                                                </div><!-- /.demos-one__single -->
-                                                            </div><!-- /.col-md-6 -->
-                                                            <div class="col-md-6 col-lg-4">
-                                                                <div class="demos-one__single">
-                                                                    <div class="demos-one__image">
-                                                                        <img src="assets/images/home-showcase/popup-menu-1-4.jpg" alt="eduact" width="416" height="431">
-                                                                        <div class="demos-one__buttons">
-                                                                            <a href="index-dark.html" class="eduact-btn">
-                                                                                <span class="eduact-btn__curve"></span>
-                                                                                View Page
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- /.demos-one__buttons -->
-                                                                    </div><!-- /.demos-one__image -->
-                                                                    <div class="demos-one__text">
-                                                                        <h3 class="demos-one__text__title">Home Page Dark</h3>
-                                                                    </div><!-- /.demos-one__text -->
-                                                                </div><!-- /.demos-one__single -->
-                                                            </div><!-- /.col-md-6 -->
-                                                            <div class="col-md-6 col-lg-4">
-                                                                <div class="demos-one__single">
-                                                                    <div class="demos-one__image">
-                                                                        <img src="assets/images/home-showcase/popup-menu-1-5.jpg" alt="eduact" width="416" height="431">
-                                                                        <div class="demos-one__buttons">
-                                                                            <a href="index-boxed.html" class="eduact-btn">
-                                                                                <span class="eduact-btn__curve"></span>
-                                                                                View Page
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- /.demos-one__buttons -->
-                                                                    </div><!-- /.demos-one__image -->
-                                                                    <div class="demos-one__text">
-                                                                        <h3 class="demos-one__text__title">Home Page Boxed</h3>
-                                                                    </div><!-- /.demos-one__text -->
-                                                                </div><!-- /.demos-one__single -->
-                                                            </div><!-- /.col-md-6 -->
-                                                            <div class="col-md-6 col-lg-4">
-                                                                <div class="demos-one__single">
-                                                                    <div class="demos-one__image">
-                                                                        <img src="assets/images/home-showcase/popup-menu-1-6.jpg" alt="eduact" width="416" height="431">
-                                                                        <div class="demos-one__buttons">
-                                                                            <a href="index-rtl.html#googtrans(en%7car)" class="eduact-btn">
-                                                                                <span class="eduact-btn__curve"></span>
-                                                                                View Page
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- /.demos-one__buttons -->
-                                                                    </div><!-- /.demos-one__image -->
-                                                                    <div class="demos-one__text">
-                                                                        <h3 class="demos-one__text__title">Home Page RTL</h3>
-                                                                    </div><!-- /.demos-one__text -->
-                                                                </div><!-- /.demos-one__single -->
-                                                            </div><!-- /.col-md-6 -->
-                                                        </div><!-- /.row -->
-                                                    </div><!-- /.container -->
-                                                </div><!-- /.demos-one -->
-                                            </div><!-- /.megamenu-popup__content -->
-                                        </div><!-- /.megamenu-popup -->
-                                    </li>
-                                </ul> --}}
+                            <li>
+                                <a href="{{url('/')}}" style="cursor: pointer">Home</a>
+                                
                             </li>
                             <li class="dropdown">
                                 <a href="#">About Us</a>
